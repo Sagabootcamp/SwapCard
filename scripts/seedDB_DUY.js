@@ -26,7 +26,7 @@ const cardSeed = [
   },
   {
     store: "Disney",
-    price: 0,
+    price: 100,
     chosen: false,    
     fimage: "https://d2wgbggetablcw.cloudfront.net/giftcards/birthday-wishes.1x.jpg",
     email:"duydo.photography@gmail.com",
