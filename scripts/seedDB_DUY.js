@@ -54,7 +54,7 @@ const cardSeed = [
     chosen: false,    
     fimage: "https://petapixel.com/assets/uploads/2015/03/bhgiftcard.jpg",
     bimage: "https://i.colnect.net/f/1051/748/Happy-Birthday-back.jpg",
-    email:"sagarika@gmail.com",
+    email:"sagarika.susarla05@gmail.com",
     exp: new Date(Date.now()),
     traderEmail:"",
     expectedOwner:""
@@ -65,7 +65,7 @@ const cardSeed = [
     chosen: false,    
     fimage: "https://primacontent.com/wp-content/uploads/2017/08/Amazon-Gift-Card-Code.jpg",
     bimage: "https://i.colnect.net/f/1051/748/Happy-Birthday-back.jpg",
-    email:"sagarika@gmail.com",
+    email:"sagarika.susarla05@gmail.com",
     exp: new Date(Date.now()),
     traderEmail:"",
     expectedOwner:""
