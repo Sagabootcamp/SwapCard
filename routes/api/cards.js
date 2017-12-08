@@ -32,7 +32,7 @@ router
 router
 .route("/userCardsSamePrice/:email-:price")
 .get(cardsController.getCardsSamePrice)
-  
+
 // Matches with "/api/cards/saveCard:"
 router
   .route("/addNewCard/:store-:price-:exp-:fimage-:bimage-:email")
@@ -62,5 +62,6 @@ router
 router
 .route("/otherCard/:email")
 .get(cardsController.getOtherCard)
+
 
 module.exports = router;
