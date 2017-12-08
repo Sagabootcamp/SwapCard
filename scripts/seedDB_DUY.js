@@ -63,7 +63,7 @@ const cardSeed = [
     store: "Amazon",
     price: 100,
     chosen: false,    
-    fimage: "https://primacontent.com/wp-content/uploads/2017/08/Amazon-Gift-Card-Code.jpg",
+    fimage: "https://www.qedbio.com/v/vspfiles/photos/AMZ-CARD-2.jpg",
     bimage: "https://i.colnect.net/f/1051/748/Happy-Birthday-back.jpg",
     email:"sagarika.susarla05@gmail.com",
     exp: new Date(Date.now()),
