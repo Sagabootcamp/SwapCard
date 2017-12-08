@@ -5,6 +5,7 @@ import Modal from "react-modal";
 // import Capture from "../Webcam/Capture";
 import WebcamCapture from "../WebcamCapture"
 import "./AddNewCard.css"
+import AlertContainer from 'react-alert';
 
 const style = {
     content : {
@@ -25,6 +26,20 @@ class AddNewCard extends Component {
         front:"",
         back: ""
     }
+    alertOptions = {
+        offset: 14,
+        position: 'top left',
+        theme: 'dark',
+        time: 5000,
+        transition: 'scale'
+      }
+
+      showAlert = () => {
+        this.msg.show('Added new card', {
+          time: 2000,
+          type: 'info'
+        })
+      }
     setRef = (webcam) => {
         this.webcam = webcam;
       }
@@ -68,6 +83,8 @@ class AddNewCard extends Component {
         let exp = JSON.stringify(e.target.elements.exp.value);
         exp = exp.replace(/-/g, ".")
         API.addNewCard(store, price, exp, fimage, bimage, localStorage.getItem("profile"));
+        this.showAlert();
+        
     }
 
     render() {
@@ -129,6 +146,7 @@ class AddNewCard extends Component {
                     </form>
                 </div>
                 <WebcamCapture selectWebcam={this.state.selectWebcam} front={this.state.front} />
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
             </Modal>
         )
     }
