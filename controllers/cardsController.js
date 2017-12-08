@@ -50,13 +50,17 @@ module.exports = {
   },
   addNewCard: function(req,res) {
     // console.log(req.params);
+    let fimage = req.params.fimage;
+    fimage = fimage.replace(/\^/g, "-");
+    let bimage = req.params.bimage;
+    bimage = bimage.replace(/\^/g, "-");
     let data = {
       store: req.params.store,
       price: req.params.price,
       chosen: false,    
-      fimage: req.params.fimage,
+      fimage: fimage,
       email: req.params.email,
-      bimage: req.params.bimage,
+      bimage: bimage,
       exp: new Date(Date.now()),
       traderEmail:"",
       expectedOwner:""
