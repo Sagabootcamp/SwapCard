@@ -3,8 +3,8 @@ import Webcam from 'react-webcam';
 import API from "../../utils/API";
 import Modal from "react-modal";
 // import Capture from "../Webcam/Capture";
-import WebcamCapture from "../WebcamCapture"
-import "./AddNewCard.css"
+import WebcamCapture from "../WebcamCapture";
+import "./AddNewCard.css";
 import AlertContainer from 'react-alert';
 
 const style = {
@@ -71,9 +71,9 @@ class AddNewCard extends Component {
         e.preventDefault();
         const store = e.target.elements.store.value;
         const price = e.target.elements.price.value;
-        // const fimage = e.target.elements.fimage.value;
         let fimage = e.target.elements.fimage.value;
         let bimage = e.target.elements.bimage.value;
+        // const fimage = e.target.elements.fimage.value;
         // console.log(fimage);
         // const bimage = e.target.elements.bimage.value;
         fimage = fimage.replace(/\//g, "%2F");
@@ -83,19 +83,22 @@ class AddNewCard extends Component {
         let exp = JSON.stringify(e.target.elements.exp.value);
         exp = exp.replace(/-/g, ".")
         API.addNewCard(store, price, exp, fimage, bimage, localStorage.getItem("profile"));
-        this.showAlert();
-        
+        this.showAlert();       
+        let that = this; 
+        setTimeout(function() {
+            that.props.unselectAddNewCard();
+        }, 500)
     }
 
     render() {
         return(
-            <Modal
+            <Modal 
                 style={style}
                 isOpen={!!this.props.selectAddNewCard}
                 onRequestClose={this.props.unselectAddNewCard}
             >
                 <div>
-                    <h2>Take picture of front and back, input card details</h2>
+                    <h2 id="dashFont2">Take picture of front and back, input card details</h2>
                     <hr />
                     <form onSubmit={this.formSubmit}>
                         <div className="row">
@@ -127,22 +130,22 @@ class AddNewCard extends Component {
                             </div>
 
                             <div className="cardImage col-lg-3">
-                                <button onClick={this.captureFront}>Capture front of Card</button>
+                                <button className="btn btn-lg" onClick={this.captureFront}>Capture front of Card</button>
                                 <br />
                                 <img src={this.state.front} alt=""/>
                             </div>
 
                             <div className="cardImage col-lg-3">
-                                <button onClick={this.captureBack}>Capture back of Card</button>
+                                <button className="btn btn-lg" onClick={this.captureBack}>Capture back of Card</button>
                                 <br />
                                 <img src={this.state.back} alt=""/>
                             </div>
                         </div>
                 
                         {true ? (
-                            <button type="submit">Submit</button>
+                            <button className="btn btn-lg" type="submit">Submit</button>
                         ): <p>Please capture both front and back of card</p>}
-                        <button onClick={this.props.unselectAddNewCard}>Cancel</button>
+                        <button className="btn btn-lg" onClick={this.props.unselectAddNewCard}>Cancel</button>
                     </form>
                 </div>
                 <WebcamCapture selectWebcam={this.state.selectWebcam} front={this.state.front} />

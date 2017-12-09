@@ -52,7 +52,28 @@ button{
 	font-family: 'Basic', sans-serif !important;
 	background-color:#C4201F !important;
 	border-color:#C4201F !important;
+	color: white !important;
 
 }
 
+p{
+	font-family: 'Carter One', cursive!important;
+	font-size: 20px!important;
+	color: white !important;
+	border-color:#C4201F !important;
+}
 
+.dashboard{
+	color: white !important;
+}
+
+#serviceDef{
+	color: white !important;
+}
+
+#userID{
+	color: white!important;
+	padding-top:10px;
+	font-size: 30px!important;
+	border-color:#C4201F !important;
+}
