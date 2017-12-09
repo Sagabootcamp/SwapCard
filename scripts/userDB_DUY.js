@@ -20,7 +20,7 @@ const UserSeed = [
   },
   {
     fullname: "Sagarika",
-    email:"sagarika@gmail.com",
+    email:"sagarika.susarla05@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
   },
