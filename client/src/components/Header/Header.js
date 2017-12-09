@@ -36,12 +36,15 @@ class Header extends Component {
   // }
 
   isLogin() {
-    this.auth.parseHash((err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
+    if(!localStorage.getItem("profile")) {
+        return false;
+    } else {
+        console.log(localStorage.getItem("profile"))
+        // this.setState({
+        //   selectedLogin: true
+        // })
         return true;
-      } else {
-        return false;}
-    });
+    }
   }
 
   constructor(props) {
