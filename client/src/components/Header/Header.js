@@ -66,7 +66,7 @@ class Header extends Component {
         <div className="jumbotron text-center">
             {/* <Login closeLogin={this.closeLogin} handleLogin={this.state.selectedLogin} /> */}
             {/* <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} /> */}
-            <h1>SwapCard <i class="fa fa-credit-card-alt" aria-hidden="true"></i></h1>
+            <h1>SwapCard <i className="fa fa-credit-card-alt" aria-hidden="true"></i></h1>
             <h2>A place to trade your unused and unwanted gift cards for retailers you prefer</h2>
             {localStorage.getItem("profile") ? <p id="userID">Logged in as: {localStorage.getItem("profile")}</p> : ""}
             {
@@ -76,7 +76,7 @@ class Header extends Component {
                     className="btn-margin btn-lg"
                     onClick={this.login.bind(this)}
                   >
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>  Log In / <i class="fa fa-user-plus" aria-hidden="true"></i> Sign-up
+                    <i className="fa fa-sign-in" aria-hidden="true"></i>  Log In / <i className="fa fa-user-plus" aria-hidden="true"></i> Sign-up
                   </Button>
                 )
             }
