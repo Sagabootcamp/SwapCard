@@ -53,7 +53,7 @@ class UserProfile extends Component {
                 <div className="jumbotron text-center">
                     <h1>SwapCard Dashboard</h1>
                     {/* creat button to test userprofile page route */}
-                    <button className={window.location.pathname === "/" ? "active" : "","btn btn-lg"}>
+                    <button className={window.location.pathname === "/" ? "active" : "btn btn-lg"}>
                         <Link to="/" >Back to homepage</Link>
                     </button>
                     {localStorage.getItem("profile") ? <p id="dashFont">Logged in as: {localStorage.getItem("profile")}</p> : ""}
