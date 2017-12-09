@@ -149,6 +149,7 @@ class AddNewCard extends Component {
                     </form>
                 </div>
                 <WebcamCapture selectWebcam={this.state.selectWebcam} front={this.state.front} />
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
             </Modal>
         )
     }
