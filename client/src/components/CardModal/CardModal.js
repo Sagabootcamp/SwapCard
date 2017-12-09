@@ -37,7 +37,7 @@ class CardModal extends Component {
       }
 
       showAlert = () => {
-        this.msg.show('Notification has been sent owner', {
+        this.msg.show('Notification has been sent to owner', {
           time: 1000,
           type: 'info'
         })

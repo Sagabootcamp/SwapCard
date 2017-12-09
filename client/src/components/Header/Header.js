@@ -68,12 +68,12 @@ class Header extends Component {
             {/* <Signup closeSignup={this.closeSignup} handleSignup={this.state.selectedSignup} handleSignupSubmit={this.handleSignupSubmit} /> */}
             <h1>SwapCard <i class="fa fa-credit-card-alt" aria-hidden="true"></i></h1>
             <h2>A place to trade your unused and unwanted gift cards for retailers you prefer</h2>
-            {localStorage.getItem("profile") ? <p>Logged in as: {localStorage.getItem("profile")}</p> : ""}
+            {localStorage.getItem("profile") ? <p id="userID">Logged in as: {localStorage.getItem("profile")}</p> : ""}
             {
               !this.auth.isAuthenticated() && (
                   <Button
                     bsStyle="primary"
-                    className="btn-margin"
+                    className="btn-margin btn-lg"
                     onClick={this.login.bind(this)}
                   >
                     <i class="fa fa-sign-in" aria-hidden="true"></i>  Log In / <i class="fa fa-user-plus" aria-hidden="true"></i> Sign-up
@@ -94,7 +94,7 @@ class Header extends Component {
             }
 
             {this.isLogin() ? <button
-                    className="btn btn-warning" ><Link to="/user">Dashboard</Link></button> : <p></p>}
+                    className="btn btn-warning btn-lg" ><Link className="dashboard" to="/user">Dashboard</Link></button> : <p></p>}
 
             {/* <button className="btn btn-success" onClick={this.handleLogin}>Log in</button> */}
             {/* <button className="btn btn-danger" onClick={this.handleSignup}>Sign up</button> */}

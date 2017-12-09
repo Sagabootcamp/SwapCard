@@ -68,7 +68,7 @@ class CarouselSamePrice extends Component {
                                 </div>
                             )
                         })
-                        ) : <p>You can't not trade because you don't have cards with same price</p>
+                        ) : <p>Trade cards with same price</p>
                     }
                     <br />
                     <button type="submit">Submit</button>
