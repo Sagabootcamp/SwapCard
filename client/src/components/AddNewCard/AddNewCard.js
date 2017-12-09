@@ -5,7 +5,6 @@ import Modal from "react-modal";
 // import Capture from "../Webcam/Capture";
 import WebcamCapture from "../WebcamCapture"
 import "./AddNewCard.css"
-import AlertContainer from 'react-alert';
 
 const style = {
     content : {
@@ -26,20 +25,6 @@ class AddNewCard extends Component {
         front:"",
         back: ""
     }
-    alertOptions = {
-        offset: 14,
-        position: 'top left',
-        theme: 'dark',
-        time: 5000,
-        transition: 'scale'
-      }
-
-      showAlert = () => {
-        this.msg.show('Added new card', {
-          time: 2000,
-          type: 'info'
-        })
-      }
     setRef = (webcam) => {
         this.webcam = webcam;
       }
@@ -71,31 +56,23 @@ class AddNewCard extends Component {
         e.preventDefault();
         const store = e.target.elements.store.value;
         const price = e.target.elements.price.value;
-        // const fimage = e.target.elements.fimage.value;
-        let fimage = e.target.elements.fimage.value;
-        let bimage = e.target.elements.bimage.value;
+        const fimage = e.target.elements.fimage.value;
         // console.log(fimage);
-        // const bimage = e.target.elements.bimage.value;
-        fimage = fimage.replace(/\//g, "%2F");
-        fimage = fimage.replace(/-/g, "^");
-        bimage = bimage.replace(/\//g, "%2F");
-        bimage = bimage.replace(/-/g, "^");
+        const bimage = e.target.elements.bimage.value;
         let exp = JSON.stringify(e.target.elements.exp.value);
         exp = exp.replace(/-/g, ".")
         API.addNewCard(store, price, exp, fimage, bimage, localStorage.getItem("profile"));
-        this.showAlert();
-        
     }
 
     render() {
         return(
-            <Modal
+            <Modal 
                 style={style}
                 isOpen={!!this.props.selectAddNewCard}
                 onRequestClose={this.props.unselectAddNewCard}
             >
                 <div>
-                    <h2>Take picture of front and back, input card details</h2>
+                    <h2 id="dashFont2">Take picture of front and back, input card details</h2>
                     <hr />
                     <form onSubmit={this.formSubmit}>
                         <div className="row">
@@ -127,26 +104,25 @@ class AddNewCard extends Component {
                             </div>
 
                             <div className="cardImage col-lg-3">
-                                <button onClick={this.captureFront}>Capture front of Card</button>
+                                <button className="btn btn-lg" onClick={this.captureFront}>Capture front of Card</button>
                                 <br />
                                 <img src={this.state.front} alt=""/>
                             </div>
 
                             <div className="cardImage col-lg-3">
-                                <button onClick={this.captureBack}>Capture back of Card</button>
+                                <button className="btn btn-lg" onClick={this.captureBack}>Capture back of Card</button>
                                 <br />
                                 <img src={this.state.back} alt=""/>
                             </div>
                         </div>
                 
                         {true ? (
-                            <button type="submit">Submit</button>
+                            <button className="btn btn-lg" type="submit">Submit</button>
                         ): <p>Please capture both front and back of card</p>}
-                        <button onClick={this.props.unselectAddNewCard}>Cancel</button>
+                        <button className="btn btn-lg" onClick={this.props.unselectAddNewCard}>Cancel</button>
                     </form>
                 </div>
                 <WebcamCapture selectWebcam={this.state.selectWebcam} front={this.state.front} />
-                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
             </Modal>
         )
     }

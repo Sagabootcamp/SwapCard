@@ -11,3 +11,15 @@ button {
     padding-bottom: 10px;
     margin-right: 10px;
 }
+
+#dashFont2{
+	font-family: 'Carter One', cursive!important;
+    font-size: 30px!important;
+    color: #2a2a2a!important;
+    text-shadow:none;
+	
+}
+
+#modalColor{
+    background-color: #bdbdbd!important;
+}
