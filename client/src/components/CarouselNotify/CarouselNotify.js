@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./CarouselNotify.css";
 import API from "../../utils/API";
 import AlertContainer from 'react-alert';
+import "./CarouselNotify.css";
 
 
 class CarouselNotify extends Component {
@@ -85,10 +86,10 @@ class CarouselNotify extends Component {
                             return(
                                 <div className="" key={index}>
                                     <span>Trader want this card from you: </span>
-                                    <img src={card.fimage} alt={index}/>
+                                    <img id="myspan" src={card.fimage} alt={index}/>
                                     <span>You will receive: </span>
                                     {!!this.state.cardTrader ? (
-                                        <img src={this.state.cardTrader.fimage} alt={this.state.cardTrader._id} />
+                                        <img id="myspan" src={this.state.cardTrader.fimage} alt={this.state.cardTrader._id} />
                                     ): ""}
                                     <button onClick={()=>this.handleAcceptTrade(card._id, card.traderEmail, this.state.cardTrader._id, localStorage.getItem("profile"))}>Click to trade</button> 
                                     <button onClick={()=>this.handleCancelTrade(card._id, this.state.cardTrader._id)}>Click to cancel</button>                                                     
