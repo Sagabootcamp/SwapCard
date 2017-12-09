@@ -36,7 +36,7 @@ class Header extends Component {
   // }
 
   isLogin() {
-    this.auth0.parseHash((err, authResult) => {
+    this.auth.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         return true;
       } else {
